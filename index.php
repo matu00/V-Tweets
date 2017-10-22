@@ -26,10 +26,18 @@
         <div class="navbar navbar-inverse navbar-fixed-top opaque-navbar">
           <div class="container">
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navMain">
-                <span class="glyphicon glyphicon-chevron-right" style="color:white;"></span>
-              </button>
-              <a class="navbar-brand" href="#">M-Experience</a>
+              <li class="tab ">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navMain">
+                  <span class="glyphicon glyphicon-chevron-right" style="color:white;"></span>
+                </button>
+                <a class="dropdown-toggle navbar-brand" data-toggle="dropdown" href="#">M-Experience</a>
+
+                <ul class="dropdown-menu" style="margin-left:80px">
+                  <li class="dropdown-submenu">
+                    <a class="test" href="#" onclick="contenido(6);" style="color:white;background-color:black;" id="cambio">Change Background</a>
+                  </li>
+                </ul>
+              </li>
             </div>
             <div class="collapse navbar-collapse" id="navMain">
               <ul class="nav navbar-nav pull-right">
@@ -42,8 +50,6 @@
         <div align="center" class="tittle"><h1 style="font-family: 'Crimson Text', serif;" id="phrases">Across the Universe</h1></div>
         <h3 style="color: #dedede;font-family: 'Crimson Text', serif;" id="author">The Beatles</h3>
 
-        <a href="#" id="cambio">Cambia color de fondo</a>
-
         <p align="center">
             <a href="#" onclick="setInterval('javascript:recargar()',6000);">recargar</a>
         </p>
@@ -53,19 +59,20 @@
 
       $(document).ready(function() {
           $('#cambio').click(function(){
+              var a =  Math.round(Math.random() * (0 - 1) + 0);
               document.getElementById('preloader').style.display = 'block';
-              $('#body').css('background-image', 'url(public/img/background-html.jpg)');
+              $('#body').css('background-image', 'url(public/img/background-html'+a+'.jpg)');
           });
       });
 
       function recargar(){
           var a=0;
              /// Invocamos a nuestro script PHP
-          $.post("process/phrases.php",{ phrase: a=1 }, function(data){
+          $.post("resources/phrases.php",{ phrase: a=1 }, function(data){
             $("#phrases").html(data);
             var a=0;
           });
-          $.post("process/phrases.php",{ phrase: a=2 }, function(data){
+          $.post("resources/phrases.php",{ phrase: a=2 }, function(data){
             $("#author").html(data);
             var a=0;
           });
