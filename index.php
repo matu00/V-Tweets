@@ -23,63 +23,17 @@
 
     <div id="particles-js">
       <div id="intro">
-        <div class="navbar navbar-inverse navbar-fixed-top opaque-navbar">
-          <div class="container">
-            <div class="navbar-header">
-              <li class="tab ">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navMain">
-                  <span class="glyphicon glyphicon-chevron-right" style="color:white;"></span>
-                </button>
-                <a class="dropdown-toggle navbar-brand" data-toggle="dropdown" href="#">M-Experience</a>
+        <?php include("views/includes/nav-bar.html"); ?>
 
-                <ul class="dropdown-menu" style="margin-left:80px">
-                  <li class="dropdown-submenu">
-                    <a class="test" href="#" onclick="contenido(6);" style="color:white;background-color:black;" id="cambio">Change Background</a>
-                  </li>
-                </ul>
-              </li>
-            </div>
-            <div class="collapse navbar-collapse" id="navMain">
-              <ul class="nav navbar-nav pull-right">
-                <li><a href="https://github.com/Matu95" target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i><br><b> My GitHub</b></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <button type="button" name="button"></button>
         <div align="center" class="tittle"><h1 style="font-family: 'Crimson Text', serif;" id="phrases">Across the Universe</h1></div>
         <h3 style="color: #dedede;font-family: 'Crimson Text', serif;" id="author">The Beatles</h3>
-
+        <img class="img-circle" id="circleimg">
+        <br><br>
         <p align="center">
-            <a href="#" onclick="setInterval('javascript:recargar()',6000);">recargar</a>
+            <a href="#" onclick="clearInterval('javascript:tweets()',6000)">detener</a>
         </p>
       </div>
     </div>
-    <script type="text/javascript">
-
-      $(document).ready(function() {
-          $('#cambio').click(function(){
-              var a =  Math.round(Math.random() * (0 - 1) + 0);
-              document.getElementById('preloader').style.display = 'block';
-              $('#body').css('background-image', 'url(public/img/background-html'+a+'.jpg)');
-          });
-      });
-
-      function recargar(){
-          var a=0;
-             /// Invocamos a nuestro script PHP
-          $.post("resources/phrases.php",{ phrase: a=1 }, function(data){
-            $("#phrases").html(data);
-            var a=0;
-          });
-          $.post("resources/phrases.php",{ phrase: a=2 }, function(data){
-            $("#author").html(data);
-            var a=0;
-          });
-
-      }
-
-    </script>
 
     <script>
       window.onload = function(){
@@ -88,9 +42,21 @@
         preloader.style.opacity = '0';
       }
     </script>
+
+    <script type="text/javascript" src="public/js/myscript.js"></script>
     <script type="text/javascript" src="public/particles-js/particles.js"></script>
     <script type="text/javascript" src="public/particles-js/config.js"></script>
     <script type="text/javascript" src="public/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="public/js/main.js"></script>
   </body>
+  <footer>
+    <div class="dropdown dropup" style="margin-left:1200px;">
+      <button class="btn btn-primary dropdown-toggle dropup" type="button" data-toggle="dropdown" onclick="trendstwitter()">
+        <i id="spin" class="fa fa-twitter" aria-hidden="true"></i> Tendencias
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu dropup" style="z-index : 99999;margin-left:-40px;" id="trends">
+      </ul>
+    </div>
+  </footer>
 </html>

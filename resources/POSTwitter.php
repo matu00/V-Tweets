@@ -1,15 +1,18 @@
 <?php
-  include("TwitterAPIExchange.php");
-  include("ConfigTwitterSecret.php");
+  include("API/TwitterAPIExchange.php");
+  include("API/ConfigTwitterSecret.php");
 
-  //url es el recurso de la API que desaeamos obtener
-  $url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
-  $varget = '?screen_name=Matu_chox';
-  $requestMethod = 'GET';
+  $url="https://api.twitter.com/1.1/statuses/update.json";
+
+  $postdata= array(
+    'status' => "hi world"
+  );
+
+  $requestMethod = 'POST';
 
   $twitter = new TwitterAPIExchange($settings);
-  echo $twitter->setGetfield($varget)
-      ->buildOauth($url, $requestMethod)
-      ->performRequest();
 
+  echo $twitter ->setPostfields($postdata)
+                ->buildOauth($url, $requestMethod)
+                ->performRequest();
 ?>
