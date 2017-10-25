@@ -32,6 +32,8 @@ function twitter(){
 }
 
 function tweets(a){
+for (var i = 0; i < 1000; i++) {
+
   $("#spin").attr('class','fa fa-twitter fa-spin');
   $.post("resources/GETwitter.php",{ tag: a }, function(data){
     var res = JSON.parse(data);
@@ -41,6 +43,9 @@ function tweets(a){
 
     $("#spin").attr('class','fa fa-twitter');
   });
+
+}
+
 }
 
 function trendstwitter(){
@@ -50,8 +55,9 @@ function trendstwitter(){
       var res = JSON.parse(data);
       var trends=" ";
       for(i=0; i<10; i++){
-        trends += "<li><a href='#' onclick=setInterval('javascript:tweets(/"+res[0]["trends"][i]["name"]+"/)',6000) >"+res[0]["trends"][i]["name"]+"</a></li>";
+        trends += "<li><a href='#' onclick=javascript:tweets(/"+res[0]["trends"][i]["name"]+"/)>"+res[0]["trends"][i]["name"]+"</a></li>";
       }
+      //onclick=setInterval('javascript:tweets(/"+res[0]["trends"][i]["name"]+"/)',6000)
       $("#trends").html(trends);
       $("#spin").attr('class','fa fa-twitter');
     });

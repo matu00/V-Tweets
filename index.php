@@ -12,6 +12,7 @@
   </head>
 
   <body id="body">
+
     <div id="preloader">
       <div class="sk-folding-cube">
         <div class="sk-cube1 sk-cube"></div>
@@ -30,7 +31,7 @@
         <img class="img-circle" id="circleimg">
         <br><br>
         <p align="center">
-            <a href="#" onclick="clearInterval('javascript:tweets()',6000)">detener</a>
+            <a href="#" onclick="clearInterval()">detener</a>
         </p>
       </div>
     </div>
@@ -55,7 +56,7 @@
         <i id="spin" class="fa fa-twitter" aria-hidden="true"></i> Tendencias
         <span class="caret"></span>
       </button>
-      <ul class="dropdown-menu dropup" style="z-index : 99999;margin-left:-40px;" id="trends">
+      <ul class="dropdown-menu dropup" style="z-index : 99999;margin-left:-50px;" id="trends">
       </ul>
     </div>
   </footer>
