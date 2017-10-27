@@ -51,7 +51,7 @@
     <script type="text/javascript" src="public/js/main.js"></script>
   </body>
   <footer>
-    <div class="dropdown dropup" style="margin-left:1200px;">
+    <div class="dropdown dropup col-md-12" style="margin-left:88%;">
       <button class="btn btn-primary dropdown-toggle dropup" type="button" data-toggle="dropdown" onclick="trendstwitter()">
         <i id="spin" class="fa fa-twitter" aria-hidden="true"></i> Tendencias
         <span class="caret"></span>

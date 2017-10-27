@@ -3,7 +3,9 @@ body{
   background: url(../img/background-html0.jpg);
   background-color: #37444e;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
 */
 }
 
@@ -83,10 +85,6 @@ ul.dropdown-menu {
 
 
 @media (max-width: 992px) {
-  body
-  {
-    background:red;
-  }
   .opaque-navbar {
     background-color: black;
     height: 60px;
