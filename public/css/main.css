@@ -92,3 +92,28 @@ ul.dropdown-menu {
 }
 
 }
+/***********************************************************************
+*  Cuadrados paletas
+***********************************************************************/
+div.palet
+{
+  margin: 50px auto;
+  width: 150px;
+  height: 50px;
+  background: #333D42;
+  color: #fff;
+  font-weight: 900;
+  font-size: 1.4em;
+  text-align: center;
+  line-height: 150px;
+  transition: all 0.3s ease;
+}
+.palet:hover
+{
+  background:#a5aba1;
+  /* color:#494c46; */
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
+  box-shadow: inset 0 0 0 3px #555953;
+}

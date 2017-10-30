@@ -1,9 +1,14 @@
-$(document).ready(function() {
-    $('#cambio').click(function(){
-        document.getElementById('preloader').style.display = 'block';
-        $('#body').css('background-image', 'url(public/img/background-html1.jpg)');
-    });
-});
+$('#cambio').click(function(){
+    var num = Math.round(Math.random() * (4 - 1) + 1);
+    $('#body').css('background-image', 'url(public/img/background-html'+num+'.jpg)');
+    $('#loader').html('<div id="preloader"><div class="sk-folding-cube"><div class="sk-cube1 sk-cube"></div><div class="sk-cube2 sk-cube"></div><div class="sk-cube4 sk-cube"></div><div class="sk-cube3 sk-cube"></div></div></div>');
+    setTimeout(function(){hide()},8000);
+    function hide(){
+    loader.style.visibility = 'hidden';
+    }
+    //document.getElementById('preloader').style.display = 'block';
+    //$('#body').css('background-image', 'url(public/img/background-html1.jpg)');
+});+
 
 function recargar(){
     var a=0;
@@ -32,8 +37,6 @@ function twitter(){
 }
 
 function tweets(a){
-for (var i = 0; i < 1000; i++) {
-
   $("#spin").attr('class','fa fa-twitter fa-spin');
   $.post("resources/GETwitter.php",{ tag: a }, function(data){
     var res = JSON.parse(data);
@@ -43,9 +46,6 @@ for (var i = 0; i < 1000; i++) {
 
     $("#spin").attr('class','fa fa-twitter');
   });
-
-}
-
 }
 
 function trendstwitter(){
@@ -55,11 +55,28 @@ function trendstwitter(){
       var res = JSON.parse(data);
       var trends=" ";
       for(i=0; i<10; i++){
-        trends += "<li><a href='#' onclick=javascript:tweets(/"+res[0]["trends"][i]["name"]+"/)>"+res[0]["trends"][i]["name"]+"</a></li>";
+        trends += "<li><a href='#' onclick=setInterval('javascript:tweets(/"+res[0]["trends"][i]["name"]+"/)',6000) >"+res[0]["trends"][i]["name"]+"</a></li>";
       }
       //onclick=setInterval('javascript:tweets(/"+res[0]["trends"][i]["name"]+"/)',6000)
       $("#trends").html(trends);
       $("#spin").attr('class','fa fa-twitter');
     });
+}
 
+function stop(){
+    window.execCommand('stop');
+}
+
+function change_color(a){
+  if (a==1) {
+    var color = "rgb(236, 236, 236)";
+  }
+  if (a==2) {
+    var color = "rgb(112, 119, 128)";
+  }
+  if (a==3) {
+    var color = "rgb(209, 150, 213)";
+  }
+  $('.modal').modal("hide");
+  $('.text').attr('style','color:'+color);
 }
