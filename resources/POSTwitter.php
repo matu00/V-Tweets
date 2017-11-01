@@ -15,4 +15,3 @@
   echo $twitter ->setPostfields($postdata)
                 ->buildOauth($url, $requestMethod)
                 ->performRequest();
-?>

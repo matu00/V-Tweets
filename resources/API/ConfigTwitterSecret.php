@@ -5,4 +5,3 @@
     'consumer_key' => "OHgnCHA1r7AhALG20vDcaVTQf",
     'consumer_secret' => "KCAQ41GEsYdD2MggAW57Z4lfZEZKlDTy5cp8GdhEZkJV3pTukt"
   );
-?>

@@ -14,5 +14,3 @@
   echo $twitter->setGetfield($varget)
       ->buildOauth($url, $requestMethod)
       ->performRequest();
-
-?>
