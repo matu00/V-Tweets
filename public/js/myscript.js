@@ -1,3 +1,9 @@
+window.onload = function() {
+  var preloader = document.getElementById('preloader');
+  preloader.style.visibility = 'hidden';
+  preloader.style.opacity = '0';
+}
+
 $('#cambio').click(function() {
   var num = Math.round(Math.random() * (4 - 1) + 1);
   $('#body').css('background-image', 'url(public/img/background-html' + num + '.jpg)');
@@ -91,3 +97,25 @@ function change_color(a) {
   $('.modal').modal("hide");
   $('.text').attr('style', 'color:' + color);
 }
+
+jQuery(document).ready(function() {
+
+  /*
+      Background slideshow
+  */
+  $('.testimonials-container').backstretch([
+    "public/img/backgrounds/2.jpg",
+    "public/img/backgrounds/1.jpg",
+    "public/img/backgrounds/3.jpg",
+    "public/img/backgrounds/4.jpg",
+    "public/img/backgrounds/5.jpg"
+  ], {
+    duration: 3000,
+    fade: 750
+  });
+
+  $('a[data-toggle="tab"]').on('shown.bs.tab', function() {
+    $('.testimonials-container').backstretch("resize");
+  });
+
+});

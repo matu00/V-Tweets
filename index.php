@@ -9,11 +9,6 @@
     <link rel="stylesheet" href="public/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="public/css/loader.css">
     <link rel="stylesheet" href="public/css/main.css">
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
   </head>
 
   <body id="body">
@@ -26,9 +21,10 @@
         <div class="sk-cube3 sk-cube"></div>
       </div>
     </div>
-    <?php include("views/includes/nav-bar.html"); ?>
+
     <div id="particles-js">
       <div id="intro">
+        <?php include("views/includes/nav-bar.html"); ?>
         <?php include("views/OtherViews/ChangeTextColor.html"); ?>
         <div align="center" class="tittle container"><h1 class="text" style="font-family: 'Crimson Text', serif;" id="phrases">Across the Universe</h1></div>
         <h3 class="text" style="color: #dedede;font-family: 'Crimson Text', serif;" id="author">The Beatles</h3>
