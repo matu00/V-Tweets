@@ -34,15 +34,15 @@
             <a href="#" onclick="stop()">detener</a>
         </p>
         <div style="margin-top:43%;position: fixed; top: 0; margin-left:80%">
-        <div class="col-md-6"></div>
+        <div class="col-md-6">
+        </div>
         <div class="col-md-6">
           <div class="dropdown dropup" >
             <button class="btn btn-primary dropdown-toggle dropup" type="button" data-toggle="dropdown" onclick="trendstwitter()">
               <i id="spin" class="fa fa-twitter" aria-hidden="true"></i> Tendencias
               <span class="caret"></span>
             </button>
-            <ul class="dropdown-menu dropup" style="z-index : 99999;margin-left:-50px;" id="trends">
-            </ul>
+            <ul class="dropdown-menu dropup" style="z-index : 99999;margin-left:-50px;" id="trends"></ul>
           </div>
         </div>
         </div>
