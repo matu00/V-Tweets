@@ -1,16 +1,29 @@
-/*
- **********************************************************
- * OPAQUE NAVBAR SCRIPT
- **********************************************************
- */
+Vue.component('tweets', {
+	template: `
+  <div class="scrollbar" id="style-1" style="text-align:center;">
 
- // Toggle tranparent navbar when the user scrolls the page
+  <div align="center" class="tittle">
+    <h1 class="text" style="font-family: 'Crimson Text', serif;" id="phrases">Across the Universe</h1>
+  </div>
+  <h3 class="text" style="color: #dedede;font-family: 'Crimson Text', serif;" id="author">The Beatles</h3>
+  <img class="img-circle" id="circleimg">
 
- $(window).scroll(function() {
-   if($(this).scrollTop() > 50)  /*height in pixels when the navbar becomes non opaque*/
-   {
-       $('.opaque-navbar').addClass('opaque');
-   } else {
-       $('.opaque-navbar').removeClass('opaque');
-   }
+  <div align="center" class="tittle">
+    <h1 class="text" style="font-family: 'Crimson Text', serif;" id="phrases">Across the Universe</h1>
+  </div>
+  <h3 class="text" style="color: #dedede;font-family: 'Crimson Text', serif;" id="author">The Beatles</h3>
+  <img class="img-circle" id="circleimg">
+  </div>
+   `
+});
+
+Vue.component('hijo', {
+	template: `<p style="background: yellow;">Soy un parrafo en el componente hijo</p>`
+});
+
+new Vue({
+    el: "#content",
+    data: {
+        message: 'Hello Vue!'
+    }
 });

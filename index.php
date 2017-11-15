@@ -2,10 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>M-Experience</title>
-    <script type="text/javascript" src="public/js/jquery-1.11.1.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <title>V-Tweets</title>
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
     <link rel="stylesheet" href="public/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="public/css/loader.css">
     <link rel="stylesheet" href="public/css/main.css">
@@ -25,18 +24,14 @@
     <div id="particles-js">
       <div id="intro">
         <?php
-          include("views/includes/nav-bar.html");
-          include("views/OtherViews/ChangeTextColor.html");
-          include("views/OtherViews/config.html"); 
+          include("src/includes/nav-bar.html");
+          include("src/OtherViews/ChangeTextColor.html");
+          include("src/OtherViews/config.html");
         ?>
+        <div id="content" align="center">
+            <tweets></tweets>
+        </div>
 
-        <div align="center" class="tittle container"><h1 class="text" style="font-family: 'Crimson Text', serif;" id="phrases">Across the Universe</h1></div>
-        <h3 class="text" style="color: #dedede;font-family: 'Crimson Text', serif;" id="author">The Beatles</h3>
-        <img class="img-circle" id="circleimg">
-        <br><br>
-        <p align="center">
-            <a href="#" onclick="stop()">detener</a>
-        </p>
         <div style="margin-top:43%;position: fixed; top: 0; margin-left:80%">
         <div class="col-md-6">
         </div>
@@ -60,11 +55,12 @@
         preloader.style.opacity = '0';
       }
     </script>
-
-    <script type="text/javascript" src="public/js/myscript.js"></script>
     <script type="text/javascript" src="public/particles-js/particles.js"></script>
-    <script type="text/javascript" src="public/particles-js/config.js"></script>
+    <script type="text/javascript" src="public/vuejs/vue.min.js"></script>
+    <script type="text/javascript" src="public/js/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="public/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="public/js/main.js"></script>
+    <script type="text/javascript" src="public/particles-js/config.js"></script>
+    <script type="text/javascript" src="public/js/myscript.js"></script>
+    <script src="public/js/main.js"></script>
   </body>
 </html>
