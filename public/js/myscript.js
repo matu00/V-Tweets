@@ -34,9 +34,9 @@ function recargar() {
 }
 
 function twitter() {
-  var a = 0;
+  var tag = $("#tag").val();
   /// Invocamos a nuestro script PHP
-  $.post("resources/GETwitter.php", function(data) {
+  $.post("resources/GETwitter.php",{tag}, function(data) {
     var res = JSON.parse(data);
     $("#phrases").html(res["statuses"][0].text);
     $("#author").html(res["statuses"][0]["user"].screen_name);
@@ -61,8 +61,9 @@ function tweets(a) {
 
 function trendstwitter() {
   $("#spin").attr('class', 'fa fa-twitter fa-spin');
+  var reg = $("#reg").val();
   /// Invocamos a nuestro script PHP
-  $.post("resources/GETrends.php", function(data) {
+  $.post("resources/GETrends.php",{ reg }, function(data) {
     var res = JSON.parse(data);
     var trends = " ";
     for (i = 0; i < 10; i++) {
