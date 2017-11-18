@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>V-Tweets</title>
-    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet"> -->
     <link rel="stylesheet" href="public/css/bootstrap.min.css">
     <link rel="stylesheet" href="public/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="public/css/loader.css">
