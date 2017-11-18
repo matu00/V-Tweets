@@ -123,7 +123,7 @@ div.palet
 .scrollbar
 {
 	height: 300px;
-	width: 800px;
+	width: 100%;
 	background:  rgba(0,0,0,0);
 	overflow-y: scroll;
 	margin-bottom: 25px;

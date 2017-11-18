@@ -54,7 +54,6 @@ function tweets(a) {
     $("#phrases").html(res["statuses"][0].text);
     $("#author").html(res["statuses"][0]["user"].screen_name);
     $('#circleimg').attr('src', res["statuses"][0]["user"].profile_image_url);
-
     $("#spin").attr('class', 'fa fa-twitter');
   });
 }
