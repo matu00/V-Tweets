@@ -80,13 +80,13 @@ function stop() {
 
 function change_color(a) {
   if (a == 1) {
-    var color = "rgb(236, 236, 236)";
+    var color = "#fff";
   }
   if (a == 2) {
     var color = "rgb(112, 119, 128)";
   }
   if (a == 3) {
-    var color = "rgb(209, 150, 213)";
+    var color = "#ef94f5";
   }
   $('.modal').modal("hide");
   $('.text').attr('style', 'color:' + color);

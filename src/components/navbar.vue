@@ -1,0 +1,46 @@
+<template>
+  <div id="navbar">
+    <div class="navbar navbar-inverse navbar-fixed-top opaque-navbar">
+      <div class="container">
+        <div class="navbar-header">
+          <li class="tab ">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navMain">
+              <span class="glyphicon glyphicon-chevron-right" style="color:white;"></span>
+            </button>
+            <a class="dropdown-toggle navbar-brand" data-toggle="dropdown" href="#">V-Tweets</a>
+
+            <ul class="dropdown-menu" style="margin-left:80px">
+              <li class="dropdown-submenu">
+                <a class="test" href="#" style="color:white;background-color: rgba(0,0,0,0.3)" id="cambio">Change Background</a>
+                <a class="test" href="#" @click="showCangeColor = true" style="color:white;background-color: rgba(0,0,0,0.3)">Change Theme</a>
+              </li>
+            </ul>
+          </li>
+        </div>
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="nav navbar-nav pull-right">
+            <li><a href="#" @click="showConfig = true"><i class="fa fa-ravelry fa-2x" aria-hidden="true"></i><br><b>Global</b></a></li>
+            <li><a href="https://github.com/Matu95" target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i><br><b>My GitHub</b></a></li>
+          </ul>
+        </div>
+      </div>
+      <ChangeTheme v-if="showCangeColor" @close="showCangeColor = false"></ChangeTheme>
+      <Config v-if="showConfig" @close="showConfig = false"></Config>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      showCangeColor: false,
+      showConfig: false
+    }
+  }
+}
+
+</script>
+
+<style lang="css">
+</style>
