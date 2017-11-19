@@ -2,7 +2,7 @@
   include("API/TwitterAPIExchange.php");
   include("API/ConfigTwitterSecret.php");
 
-  $reg = $_POST['reg'];
+  $reg = '332471';
   //url es el recurso de la API que desaeamos obtener
   $url = 'https://api.twitter.com/1.1/trends/place.json';
   $varget = '?id='.$reg;
