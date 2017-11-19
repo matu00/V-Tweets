@@ -8,7 +8,6 @@
   $varget = '?id='.$reg;
   //mendoza 332471
   $requestMethod = 'GET';
-
   $twitter = new TwitterAPIExchange($settings);
   echo $twitter->setGetfield($varget)
       ->buildOauth($url, $requestMethod)
