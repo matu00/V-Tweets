@@ -29,7 +29,14 @@
           include("src/OtherViews/config.html");
         ?>
         <div id="content" align="center">
-            <tweets></tweets>
+          <div class="scrollbar" id="style-1" style="text-align:center;">
+            <div id="tweets"></div>
+            <div align="center" class="tittle">
+              <h1 class="text" style="font-family: 'Crimson Text', serif;" id="phrases">Across the Universe</h1>
+            </div>
+            <h3 class="text" style="color: #dedede;font-family: 'Crimson Text', serif;" id="author">The Beatles</h3>
+            <img class="img-circle" id="circleimg">
+          </div>
         </div>
 
         <div style="margin-top:43%;position: fixed; top: 0; margin-left:80%">

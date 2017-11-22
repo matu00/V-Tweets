@@ -51,9 +51,14 @@ function tweets(a) {
     tag: a
   }, function(data) {
     var res = JSON.parse(data);
-    $("#phrases").html(res["statuses"][0].text);
-    $("#author").html(res["statuses"][0]["user"].screen_name);
-    $('#circleimg').attr('src', res["statuses"][0]["user"].profile_image_url);
+    var tweets = `<div class="scrollbar" id="style-1" style="text-align:center;">
+      <div align="center" class="tittle">
+        <h1 class="text" style="font-family: 'Crimson Text', serif;" id="phrases">`+res["statuses"][0].text+`</h1>
+      </div>
+      <h3 class="text" style="color: #dedede;font-family: 'Crimson Text', serif;" id="author">`+res["statuses"][0]["user"].screen_name+`</h3>
+      <img class="img-circle" id="circleimg" src="`+res["statuses"][0]["user"].profile_image_url+`">
+    </div>`;
+    $("#tweets").append(tweets);
     $("#spin").attr('class', 'fa fa-twitter');
   });
 }
@@ -70,9 +75,15 @@ function trendstwitter() {
     }
     //onclick=setInterval('javascript:tweets(/"+res[0]["trends"][i]["name"]+"/)',6000)
     $("#trends").html(trends);
+
     $("#spin").attr('class', 'fa fa-twitter');
   });
 }
+
+$(".down").click(function() {
+  var trends = document.getElementById('style-1');
+  trends.scrollTop = trends.scrollHeight;
+ });
 
 function stop() {
   window.execCommand('stop');
