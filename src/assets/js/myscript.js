@@ -45,7 +45,7 @@ function twitter() {
 
 }
 
-function tweets(a) {
+/*function tweets(a) {
   $("#spin").attr('class', 'fa fa-twitter fa-spin');
   $.post("resources/GETwitter.php", {
     tag: a
@@ -56,8 +56,7 @@ function tweets(a) {
     $('#circleimg').attr('src', res["statuses"][0]["user"].profile_image_url);
     $("#spin").attr('class', 'fa fa-twitter');
   });
-}
-
+}*/
 function trendstwitter() {
   $("#spin").attr('class', 'fa fa-twitter fa-spin');
   var reg = $("#reg").val();

@@ -3,8 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title>v-tweets</title>
-    <script src="https://cdn.jsdelivr.net/vue.resource/1.3.1/vue-resource.min.js"></script>
-
     <!-- <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet"> -->
     <link rel="stylesheet" href="src/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="src/assets/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -39,15 +37,16 @@
                 <i id="spin" class="fa fa-twitter" aria-hidden="true"></i> Tendencias
                 <span class="caret"></span>
               </button>
-              <ul class="dropdown-menu dropup" style="z-index : 99999;margin-left:-50px;" id="trends">
-
+              <ul class="dropdown-menu dropup" style="z-index : 99999;margin-left:-50px;" id="trends" v-if="trends">
+                <li v-for="(trend,index) in trends">
+                  <a href="#" v-on:click="tweets(trend.name)">{{index}} {{trend.name}}</a>
+                </li>
               </ul>
             </div>
           </div>
           </div>
         </div>
       </div>
-      <button  name="button" @click="validate()">asda</button>
     </div>
 
     <script>
