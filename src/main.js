@@ -41,7 +41,12 @@ new Vue({
   methods: {
     GetTrends(){
       $("#spin").attr('class', 'fa fa-twitter fa-spin');
-      axios.get('http://localhost/M-Experience/resources/GETrends.php').then(response => {
+      var filePath= "11";
+      axios.get('http://localhost/M-Experience/resources/GETrends.php',{
+    firstName: 'Fred',
+    lastName: 'Flintstone'
+  }
+      ).then(response => {
           this.trends = response.data[0].trends
           $("#spin").attr('class', 'fa fa-twitter');
           this.trends = this.trends.splice(1,15);
@@ -54,7 +59,7 @@ new Vue({
       var tag = '1';
       axios.post(`http://localhost/M-Experience/resources/GETwitter.php`, {
       tag: this.trends
-    }).then(response => {
+      }).then(response => {
 
       })
       .catch(e => {
