@@ -4,4 +4,4 @@ It is a SPA application that allows you to see trends specifying in addition to 
 
 ![Screenshot](/Screenshot.png?raw=true "Screenshot")
 
-Show [DEMO](https://github.com/SimulatedGREG/electron-vue).
+Show [DEMO](https://v-tweets.herokuapp.com/).
