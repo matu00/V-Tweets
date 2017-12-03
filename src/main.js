@@ -25,11 +25,10 @@ const options = {
 Vue.use(VueNotifications, options)
 Vue.use(VueResource);
 Vue.use(Cors);
+
 Vue.component('ChangeTheme', ChangeTheme);
 Vue.component('Config', Config);
-
 Vue.component('navbar', NavBar);
-
 Vue.component('tweets', Tweets);
 
 new Vue({
@@ -41,11 +40,9 @@ new Vue({
   methods: {
     GetTrends(){
       $("#spin").attr('class', 'fa fa-twitter fa-spin');
-      var filePath= "11";
       axios.get('http://localhost/M-Experience/resources/GETrends.php',{
-    firstName: 'Fred',
-    lastName: 'Flintstone'
-  }
+        firstName: 'Fred'
+      }
       ).then(response => {
           this.trends = response.data[0].trends
           $("#spin").attr('class', 'fa fa-twitter');
