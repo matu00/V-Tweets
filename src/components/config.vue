@@ -14,7 +14,7 @@
              <slot name="body">
                <div class="col-md-6">
                  <label align="center">Configure su Región</label>
-                 <select class="form-control" name="region" id="reg">
+                 <select class="form-control" v-model="$root.region" name="region" id="reg">
                    <option value="1" selected>Global</option>
                    <option value="332471" >Argentina</option>
                  </select>
@@ -26,11 +26,11 @@
                        <div class="input-group-addon">
                          <span class="fa fa-hashtag"></span>
                        </div>
-                       <input class="form-control" name="tag" id="tag">
+                       <input class="form-control" v-model="tag" v-bind:value="$root.ActiveHast">
                      </div>
                    </div>
                    <div class="col-md-3">
-                     <a href="#" class="btn btn-primary" onclick="setInterval('javascript:twitter()',6000)"> Seguir</a>
+                     <a href="#" class="btn btn-primary" v-on:click="$root.tweets(tag)" @click="$emit('close')"> Seguir</a>
                    </div>
                </div><br><br><br><br>
              </slot>
@@ -48,8 +48,14 @@
 </template>
 
 <script>
-export default {
-}
+    export default {
+        name: 'config',
+        data () {
+            return {
+                tag: null
+            }
+        },
+    }
 </script>
 
 <style lang="css">
