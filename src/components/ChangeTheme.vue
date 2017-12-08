@@ -14,13 +14,13 @@
             <slot name="body">
               <div>
                 <div class="col-md-4">
-                  <div @click="$emit('close')" class="palet" onclick="change_color(1);" style="background:rgb(236, 236, 236);"></div>
+                  <div @click="$emit('close')" class="palet"  v-on:click="change_color(1);" style="background:rgb(236, 236, 236);"></div>
                 </div>
                 <div class="col-md-4">
-                  <div @click="$emit('close')" class="palet" onclick="change_color(2);" style="background:rgb(112, 119, 128);"></div>
+                  <div @click="$emit('close')" class="palet"  v-on:click="change_color(2);" style="background:rgb(112, 119, 128);"></div>
                 </div>
                 <div class="col-md-4">
-                  <div @click="$emit('close')" class="palet" onclick="change_color(3);" style="background:#ef94f5;"></div>
+                  <div @click="$emit('close')" class="palet"  v-on:click="change_color(3);" style="background:#ef94f5;"></div>
                 </div><br><br><br><br><br><br>
               </div>
             </slot>
@@ -38,9 +38,29 @@
 </template>
 
 <script>
-export default {
-
-}
+ export default {
+     name: 'theme',
+     data () {
+         return {
+             
+         }
+     },
+     methods: {
+         change_color(a){
+             if (a == 1) {
+                 var color = "#fff";
+             }
+             if (a == 2) {
+                 var color = "rgb(112, 119, 128)";
+             }
+             if (a == 3) {
+                 var color = "#ef94f5";
+             }
+             $('.modal').modal("hide");
+             $('.text').attr('style', 'color:' + color+';font-family: "Crimson Text", serif;');
+         }
+     }
+ }
 </script>
 
 <style lang="css">
@@ -79,27 +99,6 @@ export default {
 
 .modal-body {
   margin: 20px 0;
-}
-
-.modal-default-button {
-  float: right;
-}
-
-/*
- * The following styles are auto-applied to elements with
- * transition="modal" when their visibility is toggled
- * by Vue.js.
- *
- * You can easily play with the modal transition by editing
- * these styles.
- */
-
-.modal-enter {
-  opacity: 0;
-}
-
-.modal-leave-active {
-  opacity: 0;
 }
 
 .modal-enter .modal-container,

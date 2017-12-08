@@ -40,13 +40,14 @@ new Vue({
     trends: null,
     region: 1,
     ActiveHast: null,
-    tweet: "Across the Universe",
-    author: "The beatles",
-    img: null
+    tweet: "Welcome to V-Tweets",
+    author: null,
+    img: null,
+    count: 0,
   },
   methods: {
     GetTrends(){
-      $("#spin").attr('class', 'fa fa-twitter fa-spin');
+       $("#spin").attr('class', 'fa fa-twitter fa-spin');
       axios.post('http://localhost/M-Experience/resources/GETrends.php',{
         region: this.region
       },
@@ -78,6 +79,7 @@ new Vue({
           this.tweet = response.data['statuses'][0].text;
           this.author = response.data['statuses'][0]['user'].screen_name;
           this.img = response.data['statuses'][0]['user'].profile_image_url;
+          this.update();
           this.showSuccessMsg({
               title: "",
               message: "siguiendo a #"+this.ActiveHash,
@@ -91,6 +93,20 @@ new Vue({
 
       }.bind(this), 20000);
       //this.showWarnMsg({message: tag});
+    },
+    update(){
+        var content = `
+          <div class="scrollbar" id="style-1" style="text-align:center;">
+            <div align="center" class="tittle">
+              <h1 class="text" style="font-family: 'Crimson Text', serif;" id="phrases">`+this.tweet+`</h1>
+            </div>
+            <a href="#"><h3 class="text" style="color: #dedede;font-family: 'Crimson Text', serif;" id="author">`+this.author+`</h3></a>
+            <img class="img-circle" id="circleimg" src="`+this.img+`">
+          </div>
+        `;
+        $('#newtweet').prepend(`<div id="`+this.count+`"></div>`);
+        $(content).hide().appendTo("#"+this.count).fadeIn(3000);
+        this.count++;
     }
   },
   notifications: {

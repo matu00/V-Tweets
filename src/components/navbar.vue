@@ -11,7 +11,7 @@
 
             <ul class="dropdown-menu" style="margin-left:80px">
               <li class="dropdown-submenu">
-                <a class="test" href="#" style="color:white;background-color: rgba(0,0,0,0.3)" id="cambio">Change Background</a>
+                <a class="test" href="#" style="color:white;background-color: rgba(0,0,0,0.3)" v-on:click="change_background()">Change Background</a>
                 <a class="test" href="#" @click="showCangeColor = true" style="color:white;background-color: rgba(0,0,0,0.3)">Change Theme</a>
               </li>
             </ul>
@@ -35,7 +35,38 @@ export default {
   data () {
     return {
       showCangeColor: false,
-      showConfig: false
+      showConfig: false,
+      backgrounds: [
+          'background-html0.jpg',
+          'background-html1.jpg',
+          'background-html2.jpg',
+          'background-html3.jpg',
+          'background-html4.jpg'
+      ]
+    }
+  },
+  methods: {
+    change_background(){
+        var num = Math.round(Math.random() * (4 - 1) + 1);
+        $('#body').css('background-image', 'url(src/assets/img/'+this.backgrounds[num]+')');
+        var loader = `
+        <div id="preloader">
+          <div class="sk-folding-cube">
+              <div class="sk-cube1 sk-cube"></div>
+              <div class="sk-cube2 sk-cube"></div>
+              <div class="sk-cube4 sk-cube"></div>
+              <div class="sk-cube3 sk-cube"></div>
+          </div>
+        </div>
+        `;
+        $("#loader").html(loader);
+
+        setTimeout(function() {
+            hide()
+        }, 2000);
+        function hide() {
+            $("#loader").html(' ');
+        }
     }
   }
 }
