@@ -50,15 +50,15 @@
                 var num = Math.round(Math.random() * (4 - 1) + 1);
                 $('#body').css('background-image', 'url(src/assets/img/'+this.backgrounds[num]+')');
                 var loader = `
-        <div id="preloader">
-          <div class="sk-folding-cube">
-              <div class="sk-cube1 sk-cube"></div>
-              <div class="sk-cube2 sk-cube"></div>
-              <div class="sk-cube4 sk-cube"></div>
-              <div class="sk-cube3 sk-cube"></div>
-          </div>
-        </div>
-        `;
+                <div id="preloader">
+                  <div class="sk-folding-cube">
+                      <div class="sk-cube1 sk-cube"></div>
+                      <div class="sk-cube2 sk-cube"></div>
+                      <div class="sk-cube4 sk-cube"></div>
+                      <div class="sk-cube3 sk-cube"></div>
+                  </div>
+                </div>
+                `;
                 $("#loader").html(loader);
                 setTimeout(function() {
                     hide()

@@ -1,17 +1,17 @@
 <?php
-  include("API/TwitterAPIExchange.php");
-  include("API/ConfigTwitterSecret.php");
+include("API/TwitterAPIExchange.php");
+include("API/ConfigTwitterSecret.php");
 
-  $url="https://api.twitter.com/1.1/statuses/update.json";
+$url = "https://api.twitter.com/1.1/statuses/update.json";
 
-  $postdata= array(
+$postdata = array(
     'status' => "hi world"
-  );
+);
 
-  $requestMethod = 'POST';
+$requestMethod = 'POST';
 
-  $twitter = new TwitterAPIExchange($settings);
+$twitter = new TwitterAPIExchange($settings);
 
-  echo $twitter ->setPostfields($postdata)
-                ->buildOauth($url, $requestMethod)
-                ->performRequest();
+echo $twitter->setPostfields($postdata)
+    ->buildOauth($url, $requestMethod)
+    ->performRequest();
