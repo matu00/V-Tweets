@@ -17,6 +17,9 @@
                  <select class="form-control" v-model="$root.region" name="region" id="reg">
                    <option value="1" selected>Global</option>
                    <option value="332471" >Argentina</option>
+                   <option value="23424782">Chile</option>
+                   <option value="23424768">Brazil</option>
+                   <option value="23424977">United States</option>
                  </select>
                </div>
                <div class="col-md-6">

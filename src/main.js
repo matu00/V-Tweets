@@ -48,6 +48,7 @@ new Vue({
     },
     methods: {
         GetTrends() {
+            this.trends = null;
             $("#spin").attr('class', 'fa fa-twitter fa-spin');
             axios.post('http://localhost/V-Tweets/resources/GETrends.php', {
                     region: this.region
@@ -66,7 +67,6 @@ new Vue({
         },
         tweets(tag) {
             this.ActiveHash = tag;
-
             $("#spin").attr('class', 'fa fa-twitter fa-spin');
             clearInterval(this.interval);
             this.interval = setInterval(function () {
